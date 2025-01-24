@@ -1,0 +1,74 @@
+@import '@styles/_variables.scss';
+
+.header {
+  background: white;
+  border-bottom: 1px solid $border-color;
+  padding: 1rem 0;
+}
+
+.container {
+  @include container;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 120px;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.navItem {
+  color: $text-dark;
+  text-decoration: none;
+  font-weight: 500;
+  
+  &:hover {
+    color: $primary-red;
+  }
+}
+
+.auth {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.employerLink {
+  color: $text-dark;
+  text-decoration: none;
+}
+
+.loginButton {
+  color: white;
+  background: $primary-red;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.langSwitch {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: $text-gray;
+    
+    &:hover {
+      color: $primary-red;
+    }
+  }
+}
+

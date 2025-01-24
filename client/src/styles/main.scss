@@ -1,0 +1,14 @@
+// Variables
+@use 'variables';
+
+// Mixins
+@use 'mixins';
+
+// Reset CSS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Thêm styles global ở đây
