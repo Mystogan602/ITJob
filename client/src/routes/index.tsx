@@ -6,6 +6,8 @@ import CompaniesPage from '@/pages/companies/companies'
 import BlogPage from '@/pages/blog/blog'
 import LoginPage from '@/pages/login/login'
 import NotFoundPage from '@/pages/404/404'
+import RegisterPage from '@/pages/register/register'
+
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +29,10 @@ export const router = createBrowserRouter([
       {
         path: 'blog',
         element: <BlogPage />,
+      },
+      {
+        path: '/register',
+        element: <RegisterPage />,
       },
     ],
   },

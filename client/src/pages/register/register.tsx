@@ -1,20 +1,30 @@
 import { Link } from 'react-router-dom'
 import { FcGoogle } from 'react-icons/fc'
 import { FaGithub } from 'react-icons/fa'
-import styles from './login.module.scss'
+import styles from './register.module.scss'
 
-export default function LoginPage() {
+export default function RegisterPage() {
     return (
-        <div className={styles.loginPage}>
+        <div className={styles.registerPage}>
             <div className={styles.container}>
                 <div className={styles.header}>
-                    <h1 className={styles.title}>Đăng nhập</h1>
+                    <h1 className={styles.title}>Đăng ký tài khoản</h1>
                     <p className={styles.subtitle}>
-                        Chào mừng bạn quay trở lại với ITJob
+                        Tạo tài khoản để tìm việc làm IT tốt nhất
                     </p>
                 </div>
 
                 <form className={styles.form}>
+                    <div className={styles.formGroup}>
+                        <label className={styles.label}>Họ và tên</label>
+                        <input
+                            type="text"
+                            className={styles.input}
+                            placeholder="Nhập họ và tên"
+                            required
+                        />
+                    </div>
+
                     <div className={styles.formGroup}>
                         <label className={styles.label}>Email</label>
                         <input
@@ -35,17 +45,31 @@ export default function LoginPage() {
                         />
                     </div>
 
-                    <div className={styles.forgotPassword}>
-                        <Link to="/forgot-password">Quên mật khẩu?</Link>
+                    <div className={styles.formGroup}>
+                        <label className={styles.label}>Xác nhận mật khẩu</label>
+                        <input
+                            type="password"
+                            className={styles.input}
+                            placeholder="Nhập lại mật khẩu"
+                            required
+                        />
                     </div>
 
-                    <button type="submit" className={styles.loginButton}>
-                        Đăng nhập
+                    <div className={styles.terms}>
+                        <input type="checkbox" required id="terms" />
+                        <label htmlFor="terms">
+                            Tôi đồng ý với <Link to="/terms">Điều khoản dịch vụ</Link> và{' '}
+                            <Link to="/privacy">Chính sách bảo mật</Link>
+                        </label>
+                    </div>
+
+                    <button type="submit" className={styles.registerButton}>
+                        Đăng ký
                     </button>
                 </form>
 
                 <div className={styles.divider}>
-                    <span>Hoặc đăng nhập với</span>
+                    <span>Hoặc đăng ký với</span>
                 </div>
 
                 <div className={styles.socialLogin}>
@@ -59,10 +83,10 @@ export default function LoginPage() {
                     </button>
                 </div>
 
-                <div className={styles.register}>
-                    Chưa có tài khoản? <Link to="/register">Đăng ký ngay</Link>
+                <div className={styles.login}>
+                    Đã có tài khoản? <Link to="/login">Đăng nhập ngay</Link>
                 </div>
             </div>
         </div>
     )
-}
+} 
