@@ -1,0 +1,73 @@
+@import '@styles/_variables.scss';
+
+.container {
+  min-height: calc(100vh - 80px); // Trừ đi chiều cao của header
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba($gradient-start, 0.05), rgba($gradient-end, 0.05));
+}
+
+.errorCode {
+  font-size: 8rem;
+  font-weight: 700;
+  color: $gradient-start;
+  margin: 0;
+  line-height: 1;
+  background: linear-gradient(135deg, $gradient-start, $gradient-end);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 20px rgba($gradient-start, 0.2);
+}
+
+.title {
+  font-size: 2rem;
+  color: #333;
+  margin: 1rem 0;
+}
+
+.description {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.homeButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, $gradient-start, $gradient-end);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba($gradient-start, 0.2);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba($gradient-start, 0.3);
+  }
+}
+
+.illustration {
+  max-width: 400px;
+  margin: 2rem 0;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+} 
