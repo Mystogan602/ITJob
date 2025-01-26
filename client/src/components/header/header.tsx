@@ -13,8 +13,7 @@ export function Header() {
         <header className={styles.header}>
             <div className={styles.container}>
                 <Link to="/" className={styles.logo}>
-                    {/* <img src={`${process.env.NEXT_PUBLIC_BASE_URL}/logo.svg`} alt="ITviec" /> */}
-                    <h1>ITviec</h1>
+                    <img src="/favicon.jpg" alt="ITviec" style={{ width: '50px' }} />
                 </Link>
 
                 <nav className={styles.nav}>

@@ -1,6 +1,4 @@
 // Colors
-$primary-color: #007bff;
-$secondary-color: #6c757d;
 $success-color: #28a745;
 $danger-color: #dc3545;
 
@@ -16,7 +14,10 @@ $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px; 
 
 // Colors
-$primary-red: #e5243f;
+$primary-green: #34c759;
+$primary-blue: #45a9f6;
+$primary-green-light: #c6f7d8;
+$primary-blue-light: #e5f7ff;
 $text-dark: #1e1e1e;
 $text-gray: #666666;
 $border-color: #e0e0e0;
@@ -37,4 +38,9 @@ $desktop: 1024px;
   margin: 0 auto;
   padding: 0 1rem;
 }
+
+// New colors
+$gradient-start: #0f766e;  // Xanh lá đậm
+$gradient-end: #34d399;    // Xanh lá nhạt
+$hover-color: #065f46;     // Màu hover
 

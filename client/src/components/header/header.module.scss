@@ -1,9 +1,14 @@
 @import '@styles/_variables.scss';
 
 .header {
-  background: white;
-  border-bottom: 1px solid $border-color;
+  background: linear-gradient(135deg, $gradient-start, $gradient-end);
   padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(15, 118, 110, 0.15);
 }
 
 .container {
@@ -27,12 +32,25 @@
 }
 
 .navItem {
-  color: $text-dark;
+  color: white;
   text-decoration: none;
   font-weight: 500;
+  position: relative;
+  padding: 0.5rem 0;
   
-  &:hover {
-    color: $primary-red;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+  }
+  
+  &:hover::after {
+    width: 100%;
   }
 }
 
@@ -43,16 +61,30 @@
 }
 
 .employerLink {
-  color: $text-dark;
+  color: white;
   text-decoration: none;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
 }
 
 .loginButton {
-  color: white;
-  background: $primary-red;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  color: $gradient-start;
+  background: white;
+  padding: 0.6rem 1.8rem;
+  border-radius: 30px;
   text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(15, 118, 110, 0.2);
+    background: #f8fafc;
+  }
 }
 
 .langSwitch {
@@ -64,11 +96,17 @@
     background: none;
     border: none;
     cursor: pointer;
-    color: $text-gray;
+    color: white;
+    transition: all 0.3s ease;
+    padding: 0.3rem 0.8rem;
     
     &:hover {
-      color: $primary-red;
+      color: rgba(255, 255, 255, 0.8);
     }
+  }
+  
+  span {
+    color: rgba(255, 255, 255, 0.5);
   }
 }
 
