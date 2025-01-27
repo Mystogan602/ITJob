@@ -1,4 +1,4 @@
-@import '@styles/_variables.scss';
+@use '@styles/_variables.scss' as *;
 
 .header {
   background: linear-gradient(135deg, $gradient-start, $gradient-end);

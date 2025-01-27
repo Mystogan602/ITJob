@@ -1,10 +1,19 @@
 import type { SearchProps } from "@/types"
 import { MapPin, Search } from "lucide-react"
 import styles from "./search-section.module.scss"
+// import bannerImage from '@assets/banner.webp'
+import bannerImage from '@/assets/banner.webp'
 
 export function SearchSection({ totalJobs, suggestedTags }: SearchProps) {
   return (
     <section className={styles.searchSection}>
+      <img
+        src={bannerImage}
+        alt="Banner"
+        className={styles.bannerImage}
+      />
+      <div className={styles.overlay}></div>
+
       <div className={styles.container}>
         <h1 className={styles.title}>{totalJobs} Việc làm IT cho Developer "Chất"</h1>
 

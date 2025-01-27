@@ -1,11 +1,11 @@
-@import '@styles/_variables.scss';
+@use '@styles/_variables.scss' as *;
 
 .registerPage {
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba($gradient-start, 0.05), rgba($gradient-end, 0.05));
+  background: linear-gradient(135deg, rgba($gradient-start, 0.2), rgba($gradient-end, 0.2));
   padding: 2rem;
 }
 
