@@ -1,0 +1,231 @@
+@use '@styles/_variables.scss' as *;
+
+.footer {
+  background: #090814;
+  color: #fff;
+  padding: 4rem 0 2rem;
+}
+
+.container {
+  @include container;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.top {
+  display: flex;
+  gap: 4rem;
+  margin-bottom: 3rem;
+  
+  @media (max-width: $breakpoint-lg) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.brand {
+  flex-shrink: 0;
+  
+  .logo {
+    height: 40px;
+    margin-bottom: 1rem;
+  }
+  
+  .slogan {
+    color: #94a3b8;
+    margin-bottom: 2rem;
+  }
+}
+
+.social {
+  display: flex;
+  gap: 1rem;
+  
+  a {
+    color: #94a3b8;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: $gradient-start;
+    }
+  }
+}
+
+.links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  flex: 1;
+  
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.column {
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #fff;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    margin-bottom: 0.8rem;
+    
+    a {
+      color: #94a3b8;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      
+      &:hover {
+        color: $gradient-start;
+      }
+    }
+  }
+}
+
+.contact {
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .contactLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #94a3b8;
+    font-size: 0.9rem;
+  }
+  
+  .contactValue {
+    color: #fff;
+    font-weight: 500;
+  }
+}
+
+.contactButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, $gradient-start, $gradient-end);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba($gradient-start, 0.3);
+    
+    svg {
+      transform: translate(2px, -2px);
+    }
+  }
+  
+  svg {
+    transition: transform 0.3s ease;
+  }
+}
+
+.bottom {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  
+  p {
+    color: #64748b;
+    font-size: 0.9rem;
+  }
+}
+
+// Responsive styles
+@media (max-width: $breakpoint-xl) {
+  .links {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  .contact {
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .footer {
+    padding: 3rem 0 1.5rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .top {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .brand {
+    text-align: center;
+    
+    .logo {
+      width: 80px;
+      height: 80px;
+    }
+    
+    .social {
+      justify-content: center;
+    }
+  }
+  
+  .links {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+  }
+  
+  .column {
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  .contact {
+    grid-column: span 1;
+    
+    ul {
+      gap: 0.8rem;
+    }
+  }
+  
+  .bottom {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    
+    p {
+      font-size: 0.8rem;
+    }
+  }
+} 
