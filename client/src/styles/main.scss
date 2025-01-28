@@ -1,8 +1,8 @@
 // Variables
-@use 'variables';
+@use 'variables' as *;
 
 // Mixins
-@use 'mixins';
+@use 'mixins' as *;
 
 // Reset CSS
 * {
@@ -12,3 +12,15 @@
 }
 
 // Thêm styles global ở đây
+body {
+  font-family: $font-family;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #1e293b;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family;
+}
