@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom'
 import DefaultLayout from '@/layouts/default'
-import HomePage from '@/pages/home'
+import HomePage from '@/pages/home/home'
 import JobsPage from '@/pages/jobs/jobs'
 import CompaniesPage from '@/pages/companies/companies'
 import BlogPage from '@/pages/blog/blog'

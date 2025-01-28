@@ -110,3 +110,39 @@
   }
 }
 
+@media (max-width: $breakpoint-lg) {
+  .nav {
+    display: none;
+  }
+
+  .auth {
+    gap: 1rem;
+  }
+
+  .employerLink {
+    display: none;
+  }
+
+  .loginButton {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  .langSwitch {
+    button {
+      padding: 0.2rem 0.5rem;
+      font-size: 0.9rem;
+    }
+  }
+}
+

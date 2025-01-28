@@ -156,3 +156,29 @@
     }
   }
 }
+
+@media (max-width: $breakpoint-md) {
+  .loginPage {
+    padding: 1rem;
+  }
+
+  .container {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .socialLogin {
+    flex-direction: column;
+  }
+
+  .socialButton {
+    width: 100%;
+  }
+}

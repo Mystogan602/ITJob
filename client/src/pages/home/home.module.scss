@@ -1,0 +1,12 @@
+@use '@styles/_variables.scss' as *;
+
+.main {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+@media (max-width: $breakpoint-md) {
+  .main {
+    padding-top: 60px; // Để tránh header fixed
+  }
+} 
