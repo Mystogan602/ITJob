@@ -1,0 +1,173 @@
+@use '@styles/_variables.scss' as *;
+
+.toolSection {
+  padding: 5rem 0;
+  background: linear-gradient(to bottom, #f8fafc, #fff);
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 1200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
+  }
+}
+
+.container {
+  @include container;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 4rem;
+  position: relative;
+  
+  &::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(135deg, $gradient-start, $gradient-end);
+    margin: 1.5rem auto 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba($gradient-start, 0.2);
+  }
+}
+
+.tools {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.tool {
+  padding: 2.5rem;
+  background: white;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.08);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-color: $gradient-start;
+    
+    .iconWrapper {
+      background: linear-gradient(135deg, $gradient-start, $gradient-end);
+      color: white;
+      transform: scale(1.1);
+    }
+    
+    .toolButton {
+      background: linear-gradient(135deg, $gradient-start, $gradient-end);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba($gradient-start, 0.15);
+    }
+  }
+  
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 1.5rem 0 1rem;
+  }
+  
+  p {
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+  }
+}
+
+.iconWrapper {
+  width: 70px;
+  height: 70px;
+  border-radius: 16px;
+  background: #f8fafc;
+  color: $gradient-start;
+  @include flex-center;
+  transition: all 0.3s ease;
+}
+
+.toolButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  background: white;
+  color: $gradient-start;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid $gradient-start;
+  transition: all 0.3s ease;
+}
+
+// Responsive
+@media (max-width: $breakpoint-xl) {
+  .tools {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: $breakpoint-lg) {
+  .tool {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .toolSection {
+    padding: 3rem 0;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .tools {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .tool {
+    padding: 1.5rem;
+    
+    h3 {
+      font-size: 1.2rem;
+    }
+    
+    p {
+      font-size: 0.9rem;
+    }
+  }
+} 
