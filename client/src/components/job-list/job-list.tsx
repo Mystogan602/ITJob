@@ -34,7 +34,23 @@ const jobs = [
     },
 ]
 
-export function JobList() {
+interface Job {
+    id: number;
+    title: string;
+    company: string;
+    location: string;
+    tags: string[];
+    type: string;
+    postedAt: string;
+    isHot?: boolean;
+}
+
+interface JobListProps {
+    onSelectJob: (job: Job) => void;
+    selectedJobId: number | null;
+}
+
+export function JobList({ onSelectJob, selectedJobId }: JobListProps) {
     return (
         <section className={styles.jobList}>
             <div className={styles.container}>
@@ -44,7 +60,13 @@ export function JobList() {
 
                 <div className={styles.jobGrid}>
                     {jobs.map((job) => (
-                        <div key={job.id} className={styles.jobCard}>
+                        <div 
+                            key={job.id} 
+                            className={`${styles.jobCard} ${selectedJobId === job.id ? styles.selected : ''}`}
+                            onClick={() => onSelectJob(job)}
+                            role="button"
+                            tabIndex={0}
+                        >
                             <div className={styles.jobHeader}>
                                 <h3 className={styles.jobTitle}>{job.title}</h3>
                                 {job.isHot && <span className={styles.hotBadge}>HOT</span>}
@@ -92,4 +114,4 @@ export function JobList() {
             </div>
         </section>
     )
-} 
+}
