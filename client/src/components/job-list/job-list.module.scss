@@ -280,11 +280,21 @@
   }
 }
 
+.homeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
 // Responsive
 @media (max-width: $breakpoint-xl) {
   .jobGrid {
     grid-template-columns: repeat(2, minmax(280px, 1fr));
     gap: 1.5rem;
+  }
+
+  .homeGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -306,6 +316,10 @@
   .viewMoreButton {
     width: 100%;
     justify-content: center;
+  }
+
+  .homeGrid {
+    grid-template-columns: 1fr;
   }
 }
 

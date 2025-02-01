@@ -46,11 +46,14 @@ interface Job {
 }
 
 interface JobListProps {
-    onSelectJob: (job: Job) => void;
-    selectedJobId: number | null;
+    variant?: 'home' | 'jobs';
+    onSelectJob?: (job: Job) => void;
+    selectedJobId?: number | null;
 }
 
-export function JobList({ onSelectJob, selectedJobId }: JobListProps) {
+export function JobList({ variant = 'jobs', onSelectJob, selectedJobId }: JobListProps) {
+    const gridClass = variant === 'home' ? styles.homeGrid : styles.jobGrid;
+
     return (
         <section className={styles.jobList}>
             <div className={styles.container}>
@@ -58,12 +61,12 @@ export function JobList({ onSelectJob, selectedJobId }: JobListProps) {
                     94 Việc làm IT cho Developer "Chất"
                 </h2>
 
-                <div className={styles.jobGrid}>
+                <div className={gridClass}>
                     {jobs.map((job) => (
-                        <div 
-                            key={job.id} 
+                        <div
+                            key={job.id}
                             className={`${styles.jobCard} ${selectedJobId === job.id ? styles.selected : ''}`}
-                            onClick={() => onSelectJob(job)}
+                            onClick={() => onSelectJob && onSelectJob(job)}
                             role="button"
                             tabIndex={0}
                         >
