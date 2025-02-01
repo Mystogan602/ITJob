@@ -239,6 +239,36 @@
   }
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 3rem;
+}
+
+.pageButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  color: #64748b;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    border-color: $gradient-start;
+    color: $gradient-start;
+  }
+  
+  &.active {
+    background: linear-gradient(135deg, $gradient-start, $gradient-end);
+    color: white;
+    border: none;
+  }
+}
+
 // Responsive
 @media (max-width: $breakpoint-xl) {
   .companies {

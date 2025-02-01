@@ -11,7 +11,7 @@ export default function HomePage() {
   return (
     <main className={styles.main}>
       <SearchSection totalJobs={722} suggestedTags={suggestedTags} />
-      <JobList />
+      <JobList variant="home" />
       <ToolSection />
       <CompanySection />
       <BlogSection />

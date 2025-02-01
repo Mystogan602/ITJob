@@ -1,0 +1,121 @@
+@use '@styles/_variables.scss' as *;
+
+.main {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.filterSection {
+  background: white;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  position: sticky;
+  top: 60px;
+  z-index: 10;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #64748b;
+  
+  select {
+    padding: 0.5rem 2rem 0.5rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: white;
+    color: #1e293b;
+    font-size: 0.95rem;
+    cursor: pointer;
+    min-width: 180px;
+    
+    &:focus {
+      outline: none;
+      border-color: $gradient-start;
+    }
+  }
+}
+
+.searchGroup {
+  flex: 1;
+  display: flex;
+  gap: 0.5rem;
+  
+  input {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    
+    &:focus {
+      outline: none;
+      border-color: $gradient-start;
+    }
+  }
+  
+  .searchButton {
+    background: linear-gradient(135deg, $gradient-start, $gradient-end);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: $hover-color;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .main {
+    padding-top: 60px;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .filterGroup select {
+    min-width: 150px;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .filterSection {
+    padding: 1rem 0;
+  }
+  
+  .container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .filterGroup {
+    width: 100%;
+    
+    select {
+      flex: 1;
+    }
+  }
+  
+  .searchGroup {
+    width: 100%;
+  }
+} 
