@@ -64,7 +64,7 @@ export function Footer() {
 
                     <div className={styles.links}>
                         <div className={styles.column}>
-                            <h3>Về ITviec</h3>
+                            <h3>Về ITJob</h3>
                             <ul>
                                 {footerLinks.about.map((link) => (
                                     <li key={link.href}>

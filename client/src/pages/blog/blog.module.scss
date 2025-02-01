@@ -1,0 +1,133 @@
+@use '@styles/_variables.scss' as *;
+
+.main {
+    min-height: 100vh;
+    background: #f8fafc;
+}
+
+.hero {
+    background: linear-gradient(135deg, $gradient-start, $gradient-end);
+    padding: 4rem 0;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    @include container;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.searchBox {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    gap: 1rem;
+}
+
+.searchInput {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+    }
+}
+
+.searchButton {
+    padding: 1rem 2rem;
+    background: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    color: $gradient-start;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+}
+
+.categories {
+    padding: 4rem 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.category {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #1e293b;
+        margin-bottom: 1rem;
+    }
+    
+    p {
+        color: #64748b;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: $breakpoint-xl) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: $breakpoint-md) {
+    .hero {
+        padding: 3rem 0;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .searchBox {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: $breakpoint-sm) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .title {
+        font-size: 1.8rem;
+    }
+} 
